@@ -1,112 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SANGU | Portfolio</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Poppins,sans-serif;background:#07070b;color:#f5f5f7;line-height:1.6;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 80% 10%,rgba(255,55,55,.13),transparent 30%),radial-gradient(circle at 10% 50%,rgba(95,50,255,.12),transparent 30%);pointer-events:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:10;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(7,7,11,.72);backdrop-filter:blur(15px);border-bottom:1px solid #202027}
-.logo{font-family:Orbitron;color:#ff3b3b;font-weight:800;font-size:22px}
-nav a{color:#ddd;text-decoration:none;margin-left:25px;font-size:14px}
-nav a:hover{color:#ff5555}
-section{padding:95px 7%;position:relative}
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
-.hero h1{font-family:Orbitron;font-size:clamp(42px,8vw,90px);line-height:1.05}
-.hero h1 span{color:#ff4141;text-shadow:0 0 30px rgba(255,65,65,.35)}
-.hero p{max-width:650px;margin:22px 0;color:#b8b8c2;font-size:17px}
-.badge{display:inline-block;border:1px solid #34343e;border-radius:50px;padding:8px 15px;color:#ff6767;margin-bottom:20px;font-size:13px}
-.btn{display:inline-block;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600;margin-right:10px;transition:.25s}
-.primary{background:#ff3d3d;color:white}
-.secondary{border:1px solid #383842;color:white}
-.btn:hover{transform:translateY(-3px)}
-.title{font-family:Orbitron;font-size:32px;margin-bottom:12px}
-.sub{color:#92929d;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:rgba(18,18,25,.85);border:1px solid #292932;border-radius:18px;padding:23px;transition:.3s}
-.card:hover{transform:translateY(-7px);border-color:#ff4444;box-shadow:0 15px 45px rgba(0,0,0,.25)}
-.card h3{margin:8px 0 7px}
-.card p{color:#a7a7b1;font-size:14px}
-.icon{font-size:28px}
-.skill{margin-bottom:18px}
-.skill-top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:7px}
-.bar{height:8px;background:#292932;border-radius:20px;overflow:hidden}
-.fill{height:100%;width:var(--w);background:linear-gradient(90deg,#ff3030,#ff7b4d);border-radius:20px;animation:load 1.4s ease}
-@keyframes load{from{width:0}to{width:var(--w)}}
-.contact{background:linear-gradient(145deg,#111119,#0a0a0e)}
-.email{color:#ff6666;text-decoration:none}
-footer{text-align:center;padding:25px;color:#777;border-top:1px solid #202027;font-size:13px}
-.reveal{animation:up .8s ease both}
-@keyframes up{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
-@media(max-width:650px){nav{padding:15px 5%}nav div:last-child{display:none}section{padding:80px 5%}.hero h1{font-size:45px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="SANGU — BCA student, creator and gamer portfolio.">
+  <title>SANGU | Digital Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050507;
+      --text:#f5f5f7;
+      --muted:#9b9ba7;
+      --red:#ff3b3b;
+      --line:#24242d;
+      --glow:rgba(255,59,59,.28)
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0
+    }
+
+    html{
+      scroll-behavior:smooth
+    }
+
+    body{
+      font-family:Poppins,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden
+    }
+
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 85% 15%,rgba(255,59,59,.12),transparent 28%),
+        radial-gradient(circle at 10% 70%,rgba(91,60,255,.10),transparent 30%)
+    }
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:20;
+      padding:16px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(5,5,7,.72);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07)
+    }
+
+    .logo{
+      font-family:Orbitron;
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:2px
+    }
+
+    .logo span{
+      color:var(--red)
+    }
+
+    nav a{
+      color:#c9c9d1;
+      text-decoration:none;
+      margin-left:25px;
+      font-size:13px;
+      font-weight:500;
+      transition:.25s
+    }
+
+    nav a:hover{
+      color:#fff
+    }
+
+    section{
+      padding:110px 7%;
+      position:relative
+    }
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:50px;
+      align-items:center;
+      padding-top:120px
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid #30303a;
+      border-radius:999px;
+      padding:8px 14px;
+      color:#ff7777;
+      font-size:12px;
+      background:rgba(255,59,59,.05);
+      margin-bottom:20px
+    }
+
+    .kicker:before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--red);
+      box-shadow:0 0 12px var(--red)
+    }
+
+    h1{
+      font-family:Orbitron;
+      font-size:clamp(45px,7vw,86px);
+      line-height:1.03;
+      letter-spacing:-2px
+    }
+
+    h1 span{
+      color:var(--red);
+      text-shadow:0 0 35px var(--glow)
+    }
+
+    .hero p{
+      max-width:650px;
+      color:#a8a8b4;
+      font-size:16px;
+      margin:22px 0 28px
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:12px 20px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:14px;
+      transition:.25s
+    }
+
+    .primary{
+      background:var(--red);
+      color:white;
+      box-shadow:0 8px 28px var(--glow)
+    }
+
+    .secondary{
+      border:1px solid #363640;
+      color:white;
+      background:#0c0c11
+    }
+
+    .btn:hover{
+      transform:translateY(-3px)
+    }
+
+    .profile-wrap{
+      display:flex;
+      justify-content:center;
+      position:relative
+    }
+
+    .profile-frame{
+      width:min(370px,78vw);
+      aspect-ratio:3/4;
+      border-radius:28px;
+      padding:8px;
+      background:linear-gradient(145deg,#ff3b3b,#17171e 45%,#5a35ff);
+      box-shadow:
+        0 25px 90px rgba(0,0,0,.5),
+        0 0 60px rgba(255,59,59,.12);
+      transform:rotate(2deg)
+    }
+
+    .profile{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:22px;
+      display:block;
+      background:#15151b
+    }
+
+    .profile-tag{
+      position:absolute;
+      bottom:18px;
+      left:15px;
+      background:rgba(8,8,12,.86);
+      border:1px solid #34343e;
+      padding:10px 14px;
+      border-radius:12px;
+      backdrop-filter:blur(12px);
+      font-size:12px;
+      color:#ddd
+    }
+
+    .title{
+      font-family:Orbitron;
+      font-size:30px;
+      margin-bottom:8px
+    }
+
+    .sub{
+      color:var(--muted);
+      margin-bottom:30px
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px
+    }
+
+    .card{
+      background:linear-gradient(145deg,rgba(20,20,27,.95),rgba(12,12,17,.92));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      transition:.3s
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:#4a4a56;
+      box-shadow:0 18px 45px rgba(0,0,0,.3)
+    }
+
+    .icon{
+      font-size:26px
+    }
+
+    .card h3{
+      margin:9px 0 6px
+    }
+
+    .card p{
+      color:#a2a2ae;
+      font-size:13px
+    }
+
+    .skill-list{
+      margin-top:34px;
+      max-width:760px
+    }
+
+    .skill{
+      margin-bottom:18px
+    }
+
+    .skill-top{
+      display:flex;
+      justify-content:space-between;
+      font-size:13px;
+      color:#ddd;
+      margin-bottom:7px
+    }
+
+    .bar{
+      height:7px;
+      background:#25252d;
+      border-radius:20px;
+      overflow:hidden
+    }
+
+    .fill{
+      height:100%;
+      width:var(--w);
+      background:linear-gradient(90deg,#ff3030,#ff7855);
+      border-radius:20px
+    }
+
+    .gaming{
+      background:linear-gradient(
+        180deg,
+        transparent,
+        rgba(255,59,59,.035),
+        transparent
+      )
+    }
+
+    .game-card{
+      display:flex;
+      align-items:center;
+      gap:18px
+    }
+
+    .game-card .icon{
+      font-size:35px
+    }
+
+    .game-card h3{
+      font-family:Orbitron;
+      font-size:18px
+    }
+
+    .uid{
+      color:#ff6666!important;
+      font-weight:600
+    }
+
+    .contact-box{
+      max-width:680px;
+      background:linear-gradient(145deg,#121219,#09090d);
+      border:1px solid #292932;
+      border-radius:22px;
+      padding:28px
+    }
+
+    .email{
+      color:#ff6b6b;
+      text-decoration:none
+    }
+
+    .social-note{
+      color:#777;
+      font-size:12px;
+      margin-top:18px
+    }
+
+    footer{
+      text-align:center;
+      padding:28px 7%;
+      border-top:1px solid #202027;
+      color:#777;
+      font-size:12px
+    }
+
+    .reveal{
+      animation:up .8s ease both
+    }
+
+    @keyframes up{
+      from{
+        opacity:0;
+        transform:translateY(24px)
+      }
+      to{
+        opacity:1;
+        transform:none
+      }
+    }
+
+    @media(max-width:800px){
+      nav{
+        padding:14px 5%
+      }
+
+      nav div:last-child{
+        display:none
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:35px
+      }
+
+      .hero p{
+        margin-left:auto;
+        margin-right:auto
+      }
+
+      .actions{
+        justify-content:center
+      }
+
+      .profile-wrap{
+        order:-1
+      }
+
+      .profile-frame{
+        width:260px
+      }
+
+      section{
+        padding:90px 5%
+      }
+
+      .title{
+        font-size:25px
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav>
-  <div class="logo">SANGU.</div>
-  <div>
-    <a href="#home">Home</a><a href="#skills">Skills</a><a href="#gaming">Gaming</a><a href="#contact">Contact</a>
-  </div>
-</nav>
 
-<section class="hero" id="home">
-  <div class="reveal">
-    <div class="badge">BCA 1st Year • Creator • Gamer</div>
-    <h1>Hi, I'm <span>SANGU</span></h1>
-    <p>I'm a BCA student building my skills in programming, content creation and gaming. Welcome to my personal portfolio.</p>
-    <a class="btn primary" href="#skills">Explore Skills</a>
-    <a class="btn secondary" href="#contact">Contact Me</a>
-  </div>
-</section>
+  <nav>
+    <div class="logo">SANGU<span>.</span></div>
 
-<section id="skills">
-  <h2 class="title">💻 My Skills</h2>
-  <p class="sub">Skills I'm learning and developing.</p>
-  <div class="grid">
-    <div class="card"><div class="icon">💻</div><h3>C Programming</h3><p>Beginner / Learning</p></div>
-    <div class="card"><div class="icon">🐍</div><h3>Python</h3><p>Beginner / Learning</p></div>
-    <div class="card"><div class="icon">🎬</div><h3>Video Editing</h3><p>Creative Editing</p></div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#gaming">Gaming</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <div class="card"><div class="icon">🗣️</div><h3>Communication</h3><p>Improving Spoken English</p></div>
-    <div class="card"><div class="icon">🧠</div><h3>Problem Solving</h3><p>Developing Logical Thinking</p></div>
-  </div>
-  <div style="margin-top:35px;max-width:720px">
-    <div class="skill"><div class="skill-top"><span>C Programming</span><span>35%</span></div><div class="bar"><div class="fill" style="--w:35%"></div></div></div>
-    <div class="skill"><div class="skill-top"><span>Python</span><span>30%</span></div><div class="bar"><div class="fill" style="--w:30%"></div></div></div>
-    <div class="skill"><div class="skill-top"><span>Video Editing</span><span>65%</span></div><div class="bar"><div class="fill" style="--w:65%"></div></div></div>
-    
-</section>
+  <section class="hero" id="home">
 
-<section id="gaming">
-  <h2 class="title">🎮Free Fire</h2>
-<div class="card">
-  <div class="icon">🔥</div>
-  <h3>GAROU!!</h3>
-  <p>Free Fire Gaming Name</p>
-</div>
+    <div class="reveal">
 
-<div class="card">
-  <div class="icon">🆔</div>
-  <h3>UID: 2738089993</h3>
-  <p>Free Fire UID</p>
-</div> 
-  
-</section>
+      <div class="kicker">
+        BCA 1st Year • Creator • Gamer
+      </div>
 
-<section id="contact" class="contact">
-  <h2 class="title">📧 Contact Me</h2>
-  <p class="sub">Want to connect? Send me an email.</p>
-  <div class="card" style="max-width:600px">
-    <h3>Email</h3>
-    <p style="margin:8px 0 18px"><a class="email" href="mailto:sangualle15@gmail.com">sangualle15@gmail.com</a></p>
-    <a class="btn primary" href="mailto:sangualle15@gmail.com">Send Email</a>
-  </div>
-</section>
+      <h1>
+        Hi, I'm <span>SANGU</span>
+      </h1>
 
-<footer>© 2026 SANGU. Built with passion • Gaming • Technology • Creativity</footer>
+      <p>
+        I'm a BCA student building skills in programming,
+        content creation and gaming. This is my digital space.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="#skills">
+          Explore Skills
+        </a>
+
+        <a class="btn secondary" href="#contact">
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+
+    <div class="profile-wrap reveal">
+
+      <div class="profile-frame">
+        <img
+          class="profile"
+          src="profile.jpg"
+          alt="SANGU profile photo"
+        >
+      </div>
+
+      <div class="profile-tag">
+        01 / PERSONAL PORTFOLIO
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="skills">
+
+    <h2 class="title">
+      💻 Skills & Growth
+    </h2>
+
+    <p class="sub">
+      Things I'm learning and improving.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>C Programming</h3>
+        <p>Beginner / Learning</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🐍</div>
+        <h3>Python</h3>
+        <p>Beginner / Learning</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎬</div>
+        <h3>Video Editing</h3>
+        <p>Creative Editing</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🗣️</div>
+        <h3>Communication</h3>
+        <p>Improving Spoken English</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>Problem Solving</h3>
+        <p>Developing logical thinking</p>
+      </div>
+
+    </div>
+
+    <div class="skill-list">
+
+      <div class="skill">
+
+        <div class="skill-top">
+          <span>C Programming</span>
+          <span>35%</span>
+        </div>
+
+        <div class="bar">
+          <div class="fill" style="--w:35%"></div>
+        </div>
+
+      </div>
+
+      <div class="skill">
+
+        <div class="skill-top">
+          <span>Python</span>
+          <span>30%</span>
+        </div>
+
+        <div class="bar">
+          <div class="fill" style="--w:30%"></div>
+        </div>
+
+      </div>
+
+      <div class="skill">
+
+        <div class="skill-top">
+          <span>Video Editing</span>
+          <span>65%</span>
+        </div>
+
+        <div class="bar">
+          <div class="fill" style="--w:65%"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="gaming" class="gaming">
+
+    <h2 class="title">
+      🎮 Gaming
+    </h2>
+
+    <p class="sub">
+      My Free Fire profile.
+    </p>
+
+    <div class="grid">
+
+      <div class="card game-card">
+
+        <div class="icon">🔥</div>
+
+        <div>
+          <h3>GAROU!!</h3>
+          <p>Free Fire Gaming Name</p>
+        </div>
+
+      </div>
+
+      <div class="card game-card">
+
+        <div class="icon">🆔</div>
+
+        <div>
+          <h3>UID: 2738089993</h3>
+          <p class="uid">Free Fire UID</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="contact">
+
+    <h2 class="title">
+      📧 Contact
+    </h2>
+
+    <p class="sub">
+      Want to connect? Send me an email.
+    </p>
+
+    <div class="contact-box">
+
+      <h3>Let's connect</h3>
+
+      <p style="margin:8px 0 18px">
+        <a
+          class="email"
+          href="mailto:sangualle15@gmail.com"
+        >
+          sangualle15@gmail.com
+        </a>
+      </p>
+
+      <a
+        class="btn primary"
+        href="mailto:sangualle15@gmail.com"
+      >
+        Send Email
+      </a>
+
+      <p class="social-note">
+        Gaming • Technology • Creativity
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 SANGU. Built with passion.
+  </footer>
+
 </body>
 </html>
